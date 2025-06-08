@@ -11,7 +11,7 @@
   <button onclick="send('off')" style="font-size:2em;">OFF</button>
 
   <script>
-    const ESP_IP = "http://192.168.0.123";  // Replace with your ESP32 IP
+    const ESP_IP = "http://10.0.0.89";  // Replace with your ESP32 IP
 
     function send(cmd) {
       fetch(`${ESP_IP}/${cmd}`)
