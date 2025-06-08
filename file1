@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ESP32 ON/OFF Control</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="text-align:center; font-family: sans-serif;">
+  <h2>ESP32 Output Control</h2>
+
+  <button onclick="send('on')" style="font-size:2em;">ON</button>
+  <button onclick="send('off')" style="font-size:2em;">OFF</button>
+
+  <script>
+    const ESP_IP = "http://192.168.0.123";  // Replace with your ESP32 IP
+
+    function send(cmd) {
+      fetch(`${ESP_IP}/${cmd}`)
+        .then(res => res.text())
+        .then(data => console.log(data))
+        .catch(err => console.error("ESP not responding"));
+    }
+  </script>
+</body>
+</html>
